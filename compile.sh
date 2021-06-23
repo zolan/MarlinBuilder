@@ -12,7 +12,7 @@ OBJCOPY=$(find $HOME/.arduino15/packages/STM32/tools/arm-none-eabi-gcc -name "ob
 mkdir /tmp/src
 cp -r /usr/src/marlin/ /tmp/src/
 
-arduino-cli compile --fqbn STM32:stm32:3dprinter:pnum=MALYANM200_F070CB,upload_method=swdMethod,xserial=generic,usb=CDC,xusb=FS,opt=osstd,rtlib=nano --output /tmp/firmware.bin /tmp/src/marlin/Marlin
+arduino-cli compile --fqbn STM32:stm32:3dprinter:pnum=MALYANM200_F103CB,upload_method=swdMethod,xserial=generic,usb=CDC,xusb=FS,opt=osstd,rtlib=nano --output /tmp/firmware.bin /tmp/src/marlin/Marlin
 
 $OBJCOPY /tmp/firmware.bin.elf -O binary /usr/src/marlin/Firmware/firmware.bin
 cp /usr/src/marlin/Firmware/firmware.bin /usr/src/marlin/Firmware/fcupdate.flg
